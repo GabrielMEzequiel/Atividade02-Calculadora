@@ -2,10 +2,10 @@ import { TouchableOpacity , StyleSheet } from "react-native";
 
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 
-export default function SimpleButton({ value, onPress }) {
+export default function IconButton({ value, size, onPress }) {
   return (
     <TouchableOpacity  style={button.container} onPress={onPress} activeOpacity={0.5}>
-      <FontAwesomeIcon icon={value} size={24} />
+      <FontAwesomeIcon icon={value} size={size ? size : 24} />
     </TouchableOpacity >
   );
 }
