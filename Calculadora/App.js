@@ -1,14 +1,18 @@
-import { StyleSheet, Text } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import { SafeAreaView, StatusBar, StyleSheet, Text, View } from 'react-native';
 
 import Calculadora from './components/Calculadora';
 
 export default function App() {
   return (
     <SafeAreaView style={styles.container}>
-      <Text style={styles.cabecalho}>Atividade 02 - Calculadora</Text>
+      <View style={styles.cabecalho}>
+        <Text style={styles.subtitulo}>Desenvolvimento para Dispositivos Móveis</Text>
+        <Text style={styles.titulo}>Atividade 02 - Calculadora</Text>
+      </View>
       <Calculadora />
-      <Text style={styles.rodape}>Desenvolvido por Gabriel Martins Ezequiel</Text>
+      <View style={styles.rodape}>
+        <Text style={styles.paragrafo}>Desenvolvido por Gabriel Martins Ezequiel</Text>
+      </View>
     </SafeAreaView>
   );
 }
@@ -19,12 +23,26 @@ const styles = StyleSheet.create({
     backgroundColor: '#f5f5f5',
     alignItems: 'center',
     justifyContent: 'space-between',
+    paddingTop: StatusBar.currentHeight,
   },
   cabecalho: {
-    fontSize: 24,
-    fontWeight: 'bold',
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   rodape: {
-    fontSize: 12,
+    paddingBottom: 16,
+  },
+  titulo: {
+    fontSize: 26,
+    fontWeight: 'bold',
+  },
+  subtitulo: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    marginBottom: 4,
+  },
+  paragrafo: {
+    fontSize: 14,
   },
 });
